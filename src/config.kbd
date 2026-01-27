@@ -19,7 +19,7 @@
 === HP Victus QWERTY ES Windows ===
 (deflayer qwerty_es :source qwerty_us
 	esc    f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11   f12  power del
-	@º     1   2   3   4   5   6   7   8   9   0     @'    @¡    bspc
+	@º     1   2   3   4   5   6   7   8   9   0     @sq   @¡    bspc
 	tab    q   w   e   r   t   y   u   i   o   p     @`    @+    @ç
 	caps   a   s   d   f   g   h   j   k   l   @ñ    @´   ret
 	sft    z   x   c   v   b   n   m   ,   .   @-   rsft
@@ -30,7 +30,7 @@
 === HP Victus COLEMAK ES Windows Custom ===
 (deflayer colemak :source qwerty_us
 	esc    f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11   f12  power del
-	@º     1   2   3   4   5   6   7   8   9   0     @'    @¡    bspc
+	@º     1   2   3   4   5   6   7   8   9   0     @sq   @¡    bspc
 	tab    q   w   f   p   g   j   l   u   y   @ñ    @`    @+    @ç
 	caps   a   r   s   t   d   h   n   e   i   o     @´   ret
 	sft    z   x   c   v   b   k   m   ,   .   @-   rsft
@@ -50,7 +50,8 @@
 
 (defalias ;; es -> us alias mappings
 	º   grv
-	'   -
+	sq  -
+	dq  S-2
 	¡   =
 	~   RA-4
 	`   [
@@ -67,6 +68,12 @@
 	rp  S-9
 	{   RA-@´
 	}   RA-@ç
+	?   S-@sq
+	@   RA-2
+	#   RA-3
+	|   RA-1
+	=   S-0
+	&   S-6
 )
 
 (defsrc :name numpad
@@ -86,7 +93,7 @@
 
 (deflayer colemak :source qwerty_us
 	XX      f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11    f12  power del
-	@º      1   2   3   4   5   6   7   8   9   0     @'     @¡    bspc
+	@º      1   2   3   4   5   6   7   8   9   0     @sq    @¡    bspc
 	tab     q   w   f   p   g   j   l   u   y   @ñ    @`     @+    @ç
 	@csyp   a   r   s   t   d   h   n   e   i   o    @csyp   ret
 	sft     z   x   c   v   b   k   m   ,   .   @-   rsft
@@ -100,12 +107,12 @@
 )
 
 (deflayer colemak_symbols :source qwerty_us
-	_   _   _   _    _     _   _    _    _    _    _    _    _   _ _
-	_   _   _   _    _     _   _    @`   @´   @^   _    _    _    _
-	_   _   _   @lp  @rp   _   @~   7    8    9    @*   _    _    _
-	_   _   _   @[   @]    _   $    4    5    6    0    _    _
-	_   _   _   @{   @}    _   %    1    2    3    @+   _
-	_ _ _  esc          _              _    _
+	_   _     _     _     _     _    _    _    _    _    _    _    _   _ _
+	_   _     _     _     _     _    _    @`   @´   @^   _    _    _    _
+	_   !     @?    @lp   @rp   @|   @~   7    8    9    @*   _    _    _
+	_   @@    @#    @[    @]    @=   $    4    5    6    0    _    _
+	_   @sq   @dq   @{    @}    @&   %    1    2    3    @+   _
+	_ _ _   esc            _             _    _
 )
 
 (deflayer arrow_paging :source arrows
