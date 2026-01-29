@@ -49,31 +49,41 @@
 |#
 
 (defalias ;; es -> us alias mappings
-	º   grv
-	sq  -
-	dq  S-2
-	¡   =
-	~   RA-4
-	`   [
-	´   '
-	^   S-@`
-	+   ]
-	*   S-@+
-	ç   \
-	ñ   ;
-	-   /
-	[   RA-@`
-	]   RA-@+
-	lp  S-8
-	rp  S-9
-	{   RA-@´
-	}   RA-@ç
-	?   S-@sq
-	@   RA-2
-	#   RA-3
-	|   RA-1
-	=   S-0
-	&   S-6
+	º     grv
+	¡     =
+	+     ]
+	ç     \
+	ñ     ;
+	-     /
+
+	`     [
+	´     '
+
+	~     RA-4
+	@     RA-2
+	#     RA-3
+	|     RA-1
+	=     S-0
+	&     S-6
+
+	lp    S-8    ;; (
+	rp    S-9    ;; )
+
+	sq    -      ;; '
+	dq    S-2    ;; "
+
+	[     RA-@`
+	]     RA-@+
+
+	{     RA-@´
+	}     RA-@ç
+
+	bksl  RA-@sq ;; \
+	fwsl  S-7    ;; /
+
+	^     S-@`
+	*     S-@+
+	?     S-@sq
 )
 
 (defsrc :name numpad
@@ -93,7 +103,7 @@
 
 (deflayer colemak :source qwerty_us
 	XX      f1  f2  f3  f4  f5  f6  f7  f8  f9  f10  f11    f12  power del
-	@º      1   2   3   4   5   6   7   8   9   0     @sq    @¡    bspc
+	@º      1   2   3   4   5   6   7   8   9   0     XX     @¡    bspc
 	tab     q   w   f   p   g   j   l   u   y   @ñ    @`     @+    @ç
 	@csyp   a   r   s   t   d   h   n   e   i   o    @csyp   ret
 	sft     z   x   c   v   b   k   m   ,   .   @-   rsft
@@ -107,12 +117,12 @@
 )
 
 (deflayer colemak_symbols :source qwerty_us
-	_   _     _     _     _     _    _    _    _    _    _    _    _   _ _
-	_   _     _     _     _     _    _    @`   @´   @^   _    _    _    _
-	_   !     @?    @lp   @rp   @|   @~   7    8    9    @*   _    _    _
-	_   @@    @#    @[    @]    @=   $    4    5    6    0    _    _
-	_   @sq   @dq   @{    @}    @&   %    1    2    3    @+   _
-	_ _ _   esc            _             _    _
+	_   _     _     _       _       _    _    _    _    _    _    _    _   _ _
+	_   _     _     @bksl   @fwsl   _    _    @`   @´   @^   _    _    _    _
+	_   !     @?    @lp     @rp     @|   @~   7    8    9    @*   _    _    _
+	_   @@    @#    @[      @]      @=   $    4    5    6    0    _    _
+	_   @sq   @dq   @{      @}      @&   %    1    2    3    @+   _
+	_ _ _   esc             _                _    _
 )
 
 (deflayer arrow_paging :source arrows
